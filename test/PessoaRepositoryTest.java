@@ -14,9 +14,9 @@ public class PessoaRepositoryTest {
     // vai executar uma vez antes de todos os testes
     @BeforeClass
     public static void conectarAoBancoFake() {
-        System.out.println("==> Simulando conexão com banco de dados...");
+        System.out.println("==> Simulando conexao com banco de dados...\n");
         repo = new PessoaRepository();
-        repo.inserir(new Pessoa(999, "Pré-cadastrado", "pre@exemplo.com"));
+        repo.inserir(new Pessoa(999, "Pre-cadastrado", "pre@exemplo.com"));
     }
 
     // vai executar antes de cada teste individual
@@ -24,20 +24,20 @@ public class PessoaRepositoryTest {
     public void prepararAmbienteDeTeste() {
         System.out.println("-> Preparando ambiente limpo para novo teste");
         repo.limpar(); // limpa todos os dados
-        repo.inserir(new Pessoa(999, "Pré-cadastrado", "pre@exemplo.com")); // reinserido
+        repo.inserir(new Pessoa(999, "Pre-cadastrado", "pre@exemplo.com")); // reinserido
     }
 
     // vai executar depois de cada teste individual
     @After
     public void limparDadosDoTeste() {
-        System.out.println("-> Limpando dados após teste");
+        System.out.println("-> Limpando dados apos teste\n");
         repo.limpar();
     }
 
     // vai executar uma vez depois de todos os testes
     @AfterClass
     public static void fecharConexaoFake() {
-        System.out.println("==> Simulando fechamento da conexão com banco de dados");
+        System.out.println("==> Simulando fechamento da conexao com banco de dados");
         repo = null;
     }
 
