@@ -14,21 +14,21 @@ public class PessoaRepositoryTest {
     // vai executar uma vez antes de todos os testes
     @BeforeClass
     public static void conectarAoBancoFake() {
-        System.out.println("==> Iniciando testes...\n");
+        System.out.println("==> Inicio testes...\n");
         repo = new PessoaRepository();
         repo.inserir(new Pessoa(999, "Pre-cadastrado", "pre@exemplo.com"));
     }
 
     @Before
     public void prepararAmbienteDeTeste() {
-        System.out.println("-> Preparando ambiente limpo para novo teste");
+        System.out.println("-> Iniciando...");
         repo.limpar();
         repo.inserir(new Pessoa(999, "Pre-cadastrado", "pre@exemplo.com"));
     }
 
     @After
     public void limparDadosDoTeste() {
-        System.out.println("-> Limpando dados apos teste\n");
+        System.out.println("-> Finalizado\n");
         repo.limpar();
     }
 
