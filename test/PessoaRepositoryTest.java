@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 public class PessoaRepositoryTest {
     private static PessoaRepository repo;
 
-    // vai executar uma vez antes de todos os testes
     @BeforeClass
     public static void conectarAoBancoFake() {
         System.out.println("==> Inicio testes...\n");
